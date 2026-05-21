@@ -82,7 +82,10 @@ digraph process {
     "Mark task complete in TodoWrite" -> "More tasks remain?";
     "More tasks remain?" -> "Dispatch implementer subagent (./implementer-prompt.md)" [label="yes"];
     "More tasks remain?" -> "Dispatch final code reviewer subagent for entire implementation" [label="no"];
-    "Dispatch final code reviewer subagent for entire implementation" -> "Use superpowers:finishing-a-development-branch";
+    "Dispatch final code reviewer subagent for entire implementation" -> "Offer done-sync reflection" [shape=diamond];
+    "Offer done-sync reflection" -> "Use superpowers:done-sync" [label="user agrees"];
+    "Use superpowers:done-sync" -> "Use superpowers:finishing-a-development-branch";
+    "Offer done-sync reflection" -> "Use superpowers:finishing-a-development-branch" [label="skip"];
 }
 ```
 
@@ -197,6 +200,16 @@ Code reviewer: ✅ Approved
 [After all tasks]
 [Dispatch final code-reviewer]
 Final reviewer: All requirements met, ready to merge
+
+### Before finishing-a-development-branch:
+
+After final reviewer approves and before offering completion options:
+  Ask: "所有任务完成，需不需要回顾一下？"
+
+  If user agrees:
+    Announce: "I'm using the done-sync skill"
+    Use superpowers:done-sync
+    Follow done-sync process
 
 Done!
 ```
