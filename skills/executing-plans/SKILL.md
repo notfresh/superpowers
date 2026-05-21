@@ -36,6 +36,16 @@ After all tasks complete and verified:
 - **REQUIRED SUB-SKILL:** Use superpowers:finishing-a-development-branch
 - Follow that skill to verify tests, present options, execute choice
 
+### After finishing-a-development-branch completes:
+
+If user chose Option 2 (Create PR) or Option 3 (Keep as-is) and was satisfied:
+  Ask: "需不需要回顾一下？"
+
+  If user agrees:
+    Announce: "I'm using the done-sync skill"
+    Use superpowers:done-sync
+    Follow done-sync process
+
 ## When to Stop and Ask for Help
 
 **STOP executing immediately when:**
