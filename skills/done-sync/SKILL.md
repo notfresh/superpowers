@@ -36,10 +36,10 @@ Wait for user response.
 
 ### Step 2: Handle Response
 
-**If user agrees ("好" / "是的" / "需要"):**
+**If user gives ANY positive confirmation** ("好" / "是的" / "可以" / "不错" / "很好" / "没问题" / "可以了" / "行" / etc.):
 - Proceed to Step 3
 
-**If user declines ("不用了" / "跳过" / "算了"):**
+**If user declines** ("不用了" / "跳过" / "算了" / "不用"):
 - End gracefully: "好的，以后想回顾的时候随时告诉我"
 - Stop
 
@@ -117,9 +117,11 @@ This skill should be referenced/invoked from:
 Integration pattern:
 ```
 After [workflow step], before presenting completion options:
-If user expresses satisfaction ("不错", "很好", etc.) or after reporting significant work:
-  Announce: "I'm using the done-sync skill to create a reflection"
-  Follow done-sync process
+If user gives ANY positive feedback after task completion ("好", "不错", "可以了", "行", etc.):
+  Ask: "需不需要回顾一下？"
+  If user agrees:
+    Announce: "I'm using the done-sync skill to create a reflection"
+    Follow done-sync process
 ```
 
 ## Manual Trigger
