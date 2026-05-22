@@ -1,9 +1,9 @@
 ---
-name: done-sync
-description: Use when a task or workflow completes and you want to reflect on what was discovered, learned, and accomplished — saves knowledge to docs/superpowers/done-sync/ for future reference
+name: done-sink
+description: Use when a task or workflow completes and you want to reflect on what was discovered, learned, and accomplished — saves knowledge to docs/superpowers/done-sink/ for future reference
 ---
 
-# Done Sync — Project Knowledge Reflection
+# Done Sink — Project Knowledge Reflection
 
 ## Overview
 
@@ -78,12 +78,12 @@ Show draft to user:
 
 Get confirmed content from user (may have edits).
 
-Generate filename: `docs/superpowers/done-sync/YYYY-MM-DD-<slugified-task-name>.md`
+Generate filename: `docs/superpowers/done-sink/YYYY-MM-DD-<slugified-task-name>.md`
 
 **Slugify rule:** lowercase, spaces to hyphens, remove special chars.
 
 ```bash
-mkdir -p docs/superpowers/done-sync
+mkdir -p docs/superpowers/done-sink
 ```
 
 Save file:
@@ -102,7 +102,7 @@ Save file:
 
 Confirm to user:
 ```
-已保存到 docs/superpowers/done-sync/<filename>.md
+已保存到 docs/superpowers/done-sink/<filename>.md
 以后想回顾项目知识的时候，可以查阅这个目录
 ```
 
@@ -120,13 +120,13 @@ After [workflow step], before presenting completion options:
 If user gives ANY positive feedback after task completion ("好", "不错", "可以了", "行", etc.):
   Ask: "需不需要回顾一下？"
   If user agrees:
-    Announce: "I'm using the done-sync skill to create a reflection"
-    Follow done-sync process
+    Announce: "I'm using the done-sink skill to create a reflection"
+    Follow done-sink process
 ```
 
 ## Manual Trigger
 
-User can also trigger manually with `/reflect` or `/done-sync`.
+User can also trigger manually with `/reflect` or `/done-sink`.
 
 ## File Format
 

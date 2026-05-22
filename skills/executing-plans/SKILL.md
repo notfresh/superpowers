@@ -42,9 +42,9 @@ If user chose Option 2 (Create PR) or Option 3 (Keep as-is) and was satisfied:
   Ask: "需不需要回顾一下？"
 
   If user agrees:
-    Announce: "I'm using the done-sync skill"
-    Use superpowers:done-sync
-    Follow done-sync process
+    Announce: "I'm using the done-sink skill"
+    Use superpowers:done-sink
+    Follow done-sink process
 
 ## When to Stop and Ask for Help
 

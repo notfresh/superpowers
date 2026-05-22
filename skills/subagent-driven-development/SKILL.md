@@ -207,9 +207,9 @@ After final reviewer approves and before offering completion options:
   Ask: "所有任务完成，需不需要回顾一下？"
 
   If user agrees:
-    Announce: "I'm using the done-sync skill"
-    Use superpowers:done-sync
-    Follow done-sync process
+    Announce: "I'm using the done-sink skill"
+    Use superpowers:done-sink
+    Follow done-sink process
 
 Done!
 ```
