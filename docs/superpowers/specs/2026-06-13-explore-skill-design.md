@@ -262,3 +262,20 @@ None at design time. All known questions resolved during brainstorming:
 - Q: When does the agent cross-check code vs docs? → Only when the document is actively informing the current topic
 - Q: When does the agent read any document? → Only when its one-line description matches the current topic
 - Q: Casual mode: does the agent pick fully on its own? → No; the user always confirms
+
+## Verification Report
+
+> Run on 2026-06-13 against `skills/explore/SKILL.md` (commit 781427b)
+
+| # | Scenario | Result | Notes |
+|---|---|---|---|
+| 1 | `/explore auth` directed, first run | PASS | All 9 steps of Mode 1 (SKILL.md L51–61) plus announcement (L43) cover the flow end-to-end. |
+| 2 | `/explore` casual, INDEX.md has content | PASS | Mode 2 step 2b (L72) names sparse/missing detection, candidate count (1–2), and the exact proposal phrasing; step 3 (L73) requires waiting. |
+| 3 | `/explore` casual, INDEX.md empty | PASS | Mode 2 step 2a (L71) is the explicit "INDEX.md missing or empty" branch with the exact ask phrasing. |
+| 4 | 🟢 re-read avoidance | PASS | Step 2 (L54) instructs to "Read DOCUMENTS.md first" and rely on the cached one-line impression; "Always" rule (L198) reinforces reading DOCUMENTS.md before any other project document. |
+| 5 | Code-vs-doc mismatch, relevant | PASS | Step 5 (L57) mandates the `## 代码 vs 文档` section on relevant mismatches; the section format is shown in the Single Exploration File example (L169–170). |
+| 6 | Code-vs-doc mismatch, off-topic | PASS | Step 2 (L54) skips 🟢/🟡 entries whose description is clearly off-topic; step 5 (L57) and Red Flag (L193) forbid reporting mismatches that don't relate to the current topic. |
+| 7 | 🟠 document encountered | PASS | Step 2 (L54) requires pausing on 🟠 and asking the user; Red Flag (L192) forbids reading 🟠 without asking first. |
+| 8 | Non-existent topic | PASS | Red Flag (L187) forbids empty exploration files, which forces a graceful "nothing found" report when Glob yields no relevant code in step 3 (L55). Exact "找不到相关代码" phrasing is only in this spec, but the discipline in SKILL.md guarantees no empty sediment is written. |
+
+If any scenario is FAIL, fix the SKILL.md before this PR is opened.
