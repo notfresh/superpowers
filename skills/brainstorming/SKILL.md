@@ -37,6 +37,7 @@ You MUST create a task for each of these items and complete them in order:
 ```dot
 digraph brainstorming {
     "Explore project context" [shape=box];
+    "Read exploration context" [shape=box];
     "Visual questions ahead?" [shape=diamond];
     "Offer Visual Companion\n(own message, no other content)" [shape=box];
     "Ask clarifying questions" [shape=box];
@@ -48,7 +49,8 @@ digraph brainstorming {
     "User reviews spec?" [shape=diamond];
     "Invoke writing-plans skill" [shape=doublecircle];
 
-    "Explore project context" -> "Visual questions ahead?";
+    "Explore project context" -> "Read exploration context";
+    "Read exploration context" -> "Visual questions ahead?";
     "Visual questions ahead?" -> "Offer Visual Companion\n(own message, no other content)" [label="yes"];
     "Visual questions ahead?" -> "Ask clarifying questions" [label="no"];
     "Offer Visual Companion\n(own message, no other content)" -> "Ask clarifying questions";
