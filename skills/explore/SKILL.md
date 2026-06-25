@@ -195,7 +195,7 @@ The footer reinforces the discipline: descriptions must include "when to read" s
 
 **Always:**
 
-- Read `DOCUMENTS.md` before reading any other project document.
+- Read `INDEX.md` and `DOCUMENTS.md` before reading any other project document.
 - Create `INDEX.md` and `DOCUMENTS.md` if they didn't exist before.
 - Update `INDEX.md` and `DOCUMENTS.md` together with every new exploration.
 - Include the date in the exploration file's H1 heading.
